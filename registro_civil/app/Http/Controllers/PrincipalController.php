@@ -23,6 +23,30 @@ class PrincipalController extends Controller
 
     public function store(Request $request){
         // return $request;
+        $request->validate([
+            'nombre1' => 'required',
+            'dni1' => 'required',
+            'domicilio1' => 'required',
+            'telefono1' => 'required',
+            'parentesco1' => 'required',
+            'primer_apellido_titular' => 'required',
+            'segundo_apellido_titular' => 'required',
+            'prenombres_titular' => 'required',
+            'sexo_titular' => 'required',
+            'lugar_titular' => 'required',
+            'fecha_titular' => 'required',
+            'hora_titular' => 'required',
+            'hospital_titular' => 'required',
+            'apellidos_padre' => 'required',
+            'prenombres_padre' => 'required',
+            'dni_padre' => 'required',
+            'nacionalidad_padre' => 'required',
+            'apellidos_madre' => 'required',
+            'prenombres_madre' => 'required',
+            'dni_madre' => 'required',
+            'nacionalidad_madre' => 'required',
+        ]);
+
         $registro = new Registro();
         $registro->nombre1 = $request->nombre1;
         $registro->dni1 = $request->dni1;
@@ -57,6 +81,31 @@ class PrincipalController extends Controller
     }
 
     public function update(Request $request,$id){
+
+        $request->validate([
+            'nombre1' => 'required',
+            'dni1' => 'required',
+            'domicilio1' => 'required',
+            'telefono1' => 'required',
+            'parentesco1' => 'required',
+            'primer_apellido_titular' => 'required',
+            'segundo_apellido_titular' => 'required',
+            'prenombres_titular' => 'required',
+            'sexo_titular' => 'required',
+            'lugar_titular' => 'required',
+            'fecha_titular' => 'required',
+            'hora_titular' => 'required',
+            'hospital_titular' => 'required',
+            'apellidos_padre' => 'required',
+            'prenombres_padre' => 'required',
+            'dni_padre' => 'required',
+            'nacionalidad_padre' => 'required',
+            'apellidos_madre' => 'required',
+            'prenombres_madre' => 'required',
+            'dni_madre' => 'required',
+            'nacionalidad_madre' => 'required',
+        ]);
+        
         $registro = Registro::find($id);
         $registro->nombre1 = $request->nombre1;
         $registro->dni1 = $request->dni1;

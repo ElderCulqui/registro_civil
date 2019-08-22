@@ -14,10 +14,18 @@
 // Route::get('/', function () {
 //     return view('pages.principal');
 // });
-Route::get('/','PrincipalController@index')->name('principal');
-Route::get('/show/{id}','PrincipalController@show')->name('principal.show');
-Route::get('/create','PrincipalController@create')->name('principal.create');
-Route::post('/store','PrincipalController@store')->name('principal.store');
-Route::get('/edit/{id}','PrincipalController@edit')->name('principal.edit');
-Route::post('/update/{id}','PrincipalController@update')->name('principal.update');
-Route::get('/destroy/{id}','PrincipalController@destroy')->name('principal.destroy');
+
+Route::get('/','LoginController@index')->name('login');
+Route::post('/autenticar','LoginController@autenticar')->name('autenticar');
+Route::get('/logout','LoginController@logout')->name('logout');
+
+Route::group(['middleware' => 'auth'], function(){
+    Route::get('/principal','PrincipalController@index')->name('principal');
+    Route::get('/show/{id}','PrincipalController@show')->name('principal.show');
+    Route::get('/create','PrincipalController@create')->name('principal.create');
+    Route::post('/store','PrincipalController@store')->name('principal.store');
+    Route::get('/edit/{id}','PrincipalController@edit')->name('principal.edit');
+    Route::post('/update/{id}','PrincipalController@update')->name('principal.update');
+    Route::get('/destroy/{id}','PrincipalController@destroy')->name('principal.destroy');
+});
+

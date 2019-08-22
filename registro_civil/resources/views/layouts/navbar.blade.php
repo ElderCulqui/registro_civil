@@ -14,13 +14,13 @@
         <a class="nav-link" data-toggle="dropdown" href="#">
           <i class="nav-icon fas fa-user"></i>
         </a>
-        <!-- <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
           <span class="dropdown-item dropdown-header">Cerrar Sesión</span>  
           <div class="dropdown-divider"></div>
           <div class="dropdown-item">
-            <a href="#" class="btn btn-primary btn-block float-center">Salir</a>
+            <a href="{{route('logout')}}" class="btn btn-primary btn-block float-center">Salir</a>
           </div>
-        </div> -->
+        </div>
       </li>
     </ul>
   </nav>
